@@ -1,0 +1,29 @@
+Read the intent.md below and write a requirements spec for it as spec.md.
+
+1. List the functional requirements as numbered statements (REQ-1, REQ-2, ...). Each one must be testable.
+2. Write 3 user stories in the Connextra form (As a ..., So that ..., I want ...), each with acceptance criteria.
+3. For the first story, write Gherkin scenarios: one happy path and at least one sad path.
+4. List every assumption you made that is not in the intent, and every area of concern.
+
+Do not write code. Keep to what the intent asks for.
+
+--- intent.md ---
+Problem
+
+ผู้ปกครองที่เลือกหนังให้ลูกต้องเปิดดูทีละเรื่องเพื่อเช็ก rating ของแต่ละเรื่อง รายการหนังยาวมาก ทำให้ใช้เวลาเลือกนานเกินไปจนผู้ปกครองยอมแพ้
+
+Proposed outcome
+
+ผู้ปกครองเลือก rating หนึ่งค่า แล้วเห็นเฉพาะหนังที่มี rating นั้น ในรายการทั้งหมด ให้แสดงหนังที่ใหม่ที่สุดขึ้นก่อน
+
+Affected users and systems
+
+ผู้ปกครองเป็นกลุ่มแรก จากนั้นคือผู้ชมหนังทุกคน ระบบแคตตาล็อกหนังของ Rotten Potatoes (Movie, Rating และ MovieCatalog จาก L2) ตอนนี้ยังไม่มีหน้าเว็บ: พฤติกรรมจะถูกตรวจผ่าน domain classes
+
+Constraints
+
+ค่า rating มีเพียง G, PG, PG-13, R และ NC-17 เท่านั้น ไม่มีการ login และไม่เก็บข้อมูลส่วนตัว ใช้ Plain Java ในสัปดาห์นี้ และไม่มีฐานข้อมูล
+
+Open questions
+
+ผู้ปกครองควรเห็นอะไรเมื่อไม่มีหนังที่มี rating ที่เลือก? ควรให้เลือกหลาย rating พร้อมกันได้หรือไม่?
